@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.TestMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Test">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="test_id" jdbcType="BIGINT" property="testId" />
+    <result column="test_name" jdbcType="VARCHAR" property="testName" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+  </resultMap>
+</mapper>
