@@ -1,13 +1,14 @@
 package com.company.project.web;
+
 import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
 import com.company.project.model.Test;
 import com.company.project.service.TestService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,13 +22,14 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/test")
+@Api(value = "test的增删改查")
 public class TestController {
     @Resource
     private TestService testService;
 
-    @ApiOperation(value = "新增")
-    @ApiResponses({ @ApiResponse(code = 200, message = "SUCCESS") })
     @PostMapping("/add")
+    @ApiModelProperty(value="user",notes = "Test信息的json串")
+    @ApiOperation(value = "新增Test", notes="返回新增的Test信息")
     public Result add(Test test) {
         testService.save(test);
         return ResultGenerator.genSuccessResult();
