@@ -5,6 +5,9 @@ import com.company.project.model.Test;
 import com.company.project.service.TestService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +25,8 @@ public class TestController {
     @Resource
     private TestService testService;
 
+    @ApiOperation(value = "新增")
+    @ApiResponses({ @ApiResponse(code = 200, message = "SUCCESS") })
     @PostMapping("/add")
     public Result add(Test test) {
         testService.save(test);
