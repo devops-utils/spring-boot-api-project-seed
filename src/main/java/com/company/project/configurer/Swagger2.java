@@ -15,8 +15,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class Swagger2 extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("index.html")
-                .addResourceLocations("classpath:/META-INF/resources/webapp/");
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
